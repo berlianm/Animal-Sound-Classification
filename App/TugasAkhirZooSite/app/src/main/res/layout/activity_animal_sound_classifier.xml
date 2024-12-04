@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <!-- Title Section -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Rekam Suara"
+        android:textColor="#9E9E9E"
+        android:textSize="24sp"
+        android:textAlignment="center"/>
+
+    <!-- Temporary replacement for WaveformSeekBar -->
+    <com.masoudss.lib.WaveformSeekBar
+        android:id="@+id/waveformSeekBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="395dp"
+        android:layout_height="195dp"
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="16dp"
+        android:max="100"
+        android:progress="0" />
+
+    <!-- Audio Label -->
+    <TextView
+        android:id="@+id/audioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waveformSeekBar"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_corner_background"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="Audio"
+        android:textColor="#757575" />
+
+    <!-- ganti dengan ikon play -->
+    android:contentDescription="Play button" />
+
+    <!-- Timer -->
+
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_width="87dp"
+        android:layout_height="56dp"
+        android:layout_below="@+id/timerTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:src="@drawable/ic_play" />
+
+    <TextView
+        android:id="@+id/timerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/audioLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="00:00.0"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <!-- Control Buttons -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playButton"
+        android:layout_marginTop="21dp"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/galleryButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/circle_button_gray"
+            android:src="@drawable/ic_file"/>
+
+        <ImageButton
+            android:id="@+id/recordButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/circle_button_mint"
+            android:src="@drawable/ic_mic"/>
+
+        <ImageButton
+            android:id="@+id/doneButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/circle_button_gray"
+            android:src="@drawable/ic_done"/>
+    </LinearLayout>
+</RelativeLayout>

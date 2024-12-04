@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WaveformSeekBar">
+        <attr name="progress" format="integer" />
+        <attr name="maxProgress" format="integer" />
+        <attr name="waveformWidth" format="dimension" />
+        <attr name="waveformColor" format="color" />
+    </declare-styleable>
+</resources>

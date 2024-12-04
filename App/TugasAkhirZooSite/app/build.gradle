@@ -1,0 +1,108 @@
+plugins {
+    id 'com.android.application'
+}
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+apply plugin: 'com.chaquo.python' //chaquopy
+
+android {
+    // ...
+}
+
+android {
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+
+    compileSdkVersion 34
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.bandungzoochatbot"
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //python
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "x86_64"
+        }
+        python {
+            buildPython "C:/Users/HOME/AppData/Local/Programs/Python/Python38-32/python.exe"
+
+//            pip{
+//                install "requests"
+//                install "git+https://github.com/ozgur/python-firebase"
+//                install "googletrans==3.1.0a0"
+//                install "tensorflow"
+//                install "tensorflow_hub"
+//                install "sentencepiece"
+//                install "absl-py"
+//                install "scikit-learn"
+//            }
+        }
+    }
+    sourceSets {
+        main {
+            python.srcDir "src/main/python"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        mlModelBinding true
+    }
+    namespace 'com.example.bandungzoochatbot'
+}
+
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'com.google.android.gms:play-services-maps:19.0.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+//    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
+//    implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
+    implementation 'androidx.navigation:navigation-fragment:2.8.3'
+    implementation 'androidx.navigation:navigation-ui:2.8.3'
+    testImplementation 'junit:junit:+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-database'
+
+//    implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    //noinspection GradleCompatible,GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'androidx.activity:activity:1.9.0'
+
+//    implementation 'org.tensorflow:tensorflow-lite:2.16.1'
+    implementation 'org.tensorflow:tensorflow-lite:2.8.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.2'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.4.2'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.8.0'
+//    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+    implementation 'org.tensorflow:tensorflow-lite-task-audio:0.2.0'
+
+//    implementation 'com.github.Armen101:AudioRecordView:1.0.5'
+    implementation  'com.github.massoudss:waveformSeekBar:5.0.2'
+    implementation 'com.github.lincollincol:amplituda:2.2.2'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+}
